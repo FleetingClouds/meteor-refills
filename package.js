@@ -5,8 +5,10 @@ Package.describe({
     git: "https://github.com/barrabinfc/meteor-refills"
 });
 
-Package.on_use(function (api) {
-    api.use(['fourseven:scss','ciara:bourbon','ciara:neat'], ['client', 'server']);
+Package.onUse(function (api) {
+    api.versionsFrom("METEOR@0.9.0");
+    api.use(['fourseven:scss@0.9.5','ciara:bourbon@3.1.8', 
+             'ciara:neat@1.5.0','ciara:bitters@0.10.0'], ['client', 'server']);
 
     api.add_files( [
                      'refills/modal.scss','refills/video.scss',
