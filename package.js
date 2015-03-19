@@ -1,21 +1,36 @@
 Package.describe({
-    summary: "Refills -  Prepackaged patterns and components, built on top of Bourbon, Bitters and Neat",
+    summary: "Refills - Components and patterns built with Bourbon, Neat and Bitters from thoughtbot",
     version: "0.0.1",
-    name: "bbfc:refills",
-    git: "https://github.com/barrabinfc/meteor-refills"
+    name: "warehouseman:meteor-refills",
+    git: "https://github.com/warehouseman/meteor-refills"
 });
 
 Package.onUse(function (api) {
-    api.versionsFrom("METEOR@0.9.0");
-    api.use(['fourseven:scss@0.9.5','ciara:bourbon@3.1.8', 
-             'ciara:neat@1.5.0','ciara:bitters@0.10.0',
-             'jquery@1.0.0'], ['client', 'server']);
+    api.versionsFrom("METEOR@1.0.2");
+    api.use(
+        [
+            'fourseven:scss@1.0.0'
+          , 'wolves:bitters@1.0.0'
+          , 'wolves:bourbon@1.0.0'
+          , 'wolves:neat@1.0.0'
+          , 'jquery@1.11.3_2']
+      , [ 'client'
+        , 'server'
+        ]
+    );
 
-    api.add_files( [
-                     'refills/modal.scss','refills/video.scss',
-                     'refills/dropdown.scss'
-                    ],
-                   'server');
+    api.add_files(
+        [
+            'client/accordion/accordion.scss'
+        ]
+      , 'client'
+    );
 
-    api.add_files( ['refills/dropdown.js',], 'client' )
+    api.add_files(
+        [
+            'client/accordion/accordion.js'
+        ]
+      , 'client', {isAsset: true} 
+    );
+
 });
