@@ -22,15 +22,9 @@ Package.onUse(function (api) {
     api.add_files(
         [
             'client/accordion/accordion.scss'
+          , 'client/accordion/accordion.js'
         ]
       , 'client'
-    );
-
-    api.add_files(
-        [
-            'client/accordion/accordion.js'
-        ]
-      , 'client', {isAsset: true} 
     );
 
 });
